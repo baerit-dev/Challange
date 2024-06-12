@@ -1,0 +1,14 @@
+<div class="container">
+    <mat-card *ngFor="let projection of projections" class="card">
+        <mat-card-header class="card-header">
+            <mat-card-title>{{projection.movie.title}}</mat-card-title>
+            <mat-card-subtitle>{{projection.startDate | date}} - {{projection.endDate | date}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="card-image" [src]="projection.movie.imageUrl" [alt]="projection.movie.title">
+        <mat-card-content>
+            <p>
+                {{projection.movie.description}}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>160</y>
+      <w>500</w>
+      <h>730</h>
+    </coordinates>
+    <panel_attributes>//Controll over the text of the whole element..
+_umletcode=
+var className = "Projection"; 
+var members = [
+	"-id: Long",
+	"-idMovie: Long",
+	"-idAuditorium: Long",
+	"-startDate: Date",
+	"-endDate: Date",
+	"-movie: Movie",
+	"-auditorium: Auditorium",
+
+	"+getId(): Long",
+	"+getIdMovie(): Long",
+	"+getIdAuditorium(): Long",
+	"+getStartDate(): Date",
+	"+getEndDate(): Date",
+	"+getMovie(): Movie",
+	"+getAuditorium(): Auditorium",
+
+	"+setId(Long id): void",
+	"+setIdMovie(Long id): void",
+	"+setIdAuditorium(Long id): void",
+	"+setStartDate(Date startDate): void",
+	"+setEndDate(Date endDate): void",
+	"+setMovie(Movie movie): void",
+	"+setAuditorium(Auditorium auditorium): void"
+];
+
+var publicAttributesDrawConfig = {fg: '#006400'}
+var privateAttributesDrawConfig = {fg: '#8b0000'}
+
+drawText(className, width/2, 40, center);
+drawLine(0, 50, width, 50);
+var membersHeight=75;
+for (var i=0;i&lt;members.length;i++) {
+   if(members[i][0]=='+'){	
+		drawText(members[i], width/2, membersHeight, center, publicAttributesDrawConfig );
+   } else if(members[i][0]=='-') {
+   	drawText(members[i], width/2, membersHeight, center, privateAttributesDrawConfig);
+   }
+	membersHeight+=30;
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>560</y>
+      <w>390</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1430</x>
+      <y>370</y>
+      <w>340</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>//Controll over the text of the whole element..
+_umletcode=
+var className = "Movie"; 
+var members = [
+	"-id: Long",
+	"-title: String",
+	"-description: String",
+	"-imageUrl: String",
+
+	"+getId(): Long",
+	"+getTitle(): String",
+	"+getDescription(): String",
+	"+getImageUrl(): String",
+
+	"+setId(Long id): void",
+	"+setTitle(String title): void",
+	"+setDescription(String description): void",
+	"+setImageUrl(String imageUrl): void"
+];
+
+var publicAttributesDrawConfig = {fg: '#006400'}
+var privateAttributesDrawConfig = {fg: '#8b0000'}
+
+drawText(className, width/2, 40, center);
+drawLine(0, 50, width, 50);
+var membersHeight=75;
+for (var i=0;i&lt;members.length;i++) {
+   if(members[i][0]=='+'){	
+		drawText(members[i], width/2, membersHeight, center, publicAttributesDrawConfig );
+   } else if(members[i][0]=='-') {
+   	drawText(members[i], width/2, membersHeight, center, privateAttributesDrawConfig);
+   }
+	membersHeight+=30;
+}
+
+// draw book
+drawArc(10,10,20,10,0,180,true)  //Parameters (x, y, width, height, start, extent, open, drawConfig?)
+drawArc(30,10,20,10,0,180,true)  //Parameters (x, y, width, height, start, extent, open, drawConfig?)
+drawLine(30, 13, 30, 40)
+drawArc(30,37,20,10,0,180,false, {bg: 'black'})  //Parameters (x, y, width, height, start, extent, open, drawConfig?)
+drawArc(10,37,20,10,0,180,false, {bg: 'black'})  //Parameters (x, y, width, height, start, extent, open, drawConfig?)
+drawLine(10, 13, 10, 40)
+drawLine(50, 13, 50, 40)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>310</y>
+      <w>300</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>//Controll over the text of the whole element..
+_umletcode=
+var className = "Auditorium"; 
+var members = [
+	"-id: Long",
+	"-seat: Integer",
+	"-imax: Boolean",
+
+	"+getId(): Long",
+	"+getSeat(): Long",
+	"+getImax(): Boolean",
+
+	"+setId(Long id): void",
+	"+setSeat(Integer seat): void",
+	"+setImax(Boolean imax): void",
+];
+
+var publicAttributesDrawConfig = {fg: '#006400'}
+var privateAttributesDrawConfig = {fg: '#8b0000'}
+
+drawText(className, width/2, 40, center);
+drawLine(0, 50, width, 50);
+var membersHeight=75;
+for (var i=0;i&lt;members.length;i++) {
+   if(members[i][0]=='+'){	
+		drawText(members[i], width/2, membersHeight, center, publicAttributesDrawConfig );
+   } else if(members[i][0]=='-') {
+   	drawText(members[i], width/2, membersHeight, center, privateAttributesDrawConfig);
+   }
+	membersHeight+=30;
+}
+
+// draw book
+drawArc(10,10,20,10,0,180,true)  //Parameters (x, y, width, height, start, extent, open, drawConfig?)
+drawArc(30,10,20,10,0,180,true)  //Parameters (x, y, width, height, start, extent, open, drawConfig?)
+drawLine(30, 13, 30, 40)
+drawArc(30,37,20,10,0,180,false, {bg: 'black'})  //Parameters (x, y, width, height, start, extent, open, drawConfig?)
+drawArc(10,37,20,10,0,180,false, {bg: 'black'})  //Parameters (x, y, width, height, start, extent, open, drawConfig?)
+drawLine(10, 13, 10, 40)
+drawLine(50, 13, 50, 40)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>490</y>
+      <w>300</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;280.0;10.0</additional_attributes>
+  </element>
+</diagram>

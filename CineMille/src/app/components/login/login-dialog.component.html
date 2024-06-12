@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>{{isLogged ? "Logout" : "Login"}}</h2>
+<mat-dialog-content>
+    <div *ngIf="!isLogged">
+        <form [formGroup]="form">
+        <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="User" formControlName="username">
+            <mat-hint>Inserisci il tuo username</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <mat-hint>Inserisci la tua password</mat-hint>
+            <button class="me-2" mat-icon-button matSuffix (click)="hidePassword()"
+                [attr.aria-label]="'Nascondi password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        </form>
+    </div>
+    <div *ngIf="isLogged">
+        Sei sicuro di voler fare il logout?
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annulla</button>
+    <button mat-button cdkFocusInitial (click)="login()">{{isLogged ? "Logout" : "Login"}}</button>
+</mat-dialog-actions>

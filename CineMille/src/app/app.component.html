@@ -1,0 +1,23 @@
+<mat-toolbar>
+  <span>CineMille</span>
+  <span class="spacer"></span>
+  <button mat-flat-button color="primary" (click)="openLoginLogoutDialog()">
+    {{ isLogged ? "Logout" : "Login"}}
+  </button>
+</mat-toolbar>
+
+
+<h3 *ngIf="isLogged" class="title">Storico delle proiezioni</h3>
+<div class="select-sort">
+  <span class="me-2">Filtro:</span>
+  <mat-button-toggle-group class="me-2" (change)="onSortChange($event.value)">
+    <mat-button-toggle checked="true" value="start_date">Data Iniziale</mat-button-toggle>
+    <mat-button-toggle value="end_date">Data di Finale</mat-button-toggle>
+  </mat-button-toggle-group>
+  <mat-button-toggle-group (change)="onDirChange($event.value)">
+    <mat-button-toggle checked="true" value="ASC">Ascendente</mat-button-toggle>
+    <mat-button-toggle value="DESC">Discendente</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+<app-movie-viewer [projections]="projections"></app-movie-viewer>
+<mat-spinner *ngIf="showLoading"></mat-spinner>

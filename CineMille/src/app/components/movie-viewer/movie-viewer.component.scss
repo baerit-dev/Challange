@@ -1,0 +1,25 @@
+.card {
+    max-width: 400px;
+    margin: 0 1rem;
+}
+
+.card-image {
+    height: 600px;
+}
+
+.card-header {
+    height: 5rem;
+}
+
+.container {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        margin: auto;
+    }
+}
